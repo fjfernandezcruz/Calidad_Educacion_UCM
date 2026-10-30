@@ -656,36 +656,6 @@ input:focus-visible {
   color: #e8f0f8;
 }
 
-.contact-details {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgb(208 224 232 / 38%);
-}
-
-.contact-details p {
-  margin: 0;
-  color: #e8f0f8;
-  font-size: 0.88rem;
-}
-
-.contact-details .contact-role {
-  margin-bottom: 0.25rem;
-}
-
-.contact-details .contact-name {
-  margin-bottom: 0.2rem;
-}
-
-.contact-details a {
-  color: var(--paper);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-.contact-details a:hover {
-  color: #d0e0e8;
-}
-
 .closing-banner h2 {
   margin: 0;
   font-family: "Hubot Sans", sans-serif;
