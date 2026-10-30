@@ -662,7 +662,7 @@ input:focus-visible {
   padding: 1rem 1.4rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-card);
-  color: var(--text);
+  color: var(--ink);
   background: var(--paper);
 }
 
@@ -675,7 +675,7 @@ input:focus-visible {
 
 .contact-details .contact-role {
   margin-bottom: 0.15rem;
-  color: var(--text);
+  color: var(--ink);
 }
 
 .contact-details .contact-name {
