@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Consulta el sistema de calidad, los informes de las titulaciones, las encuestas y los recursos de calidad de la Facultad de Educación de la UCM."
+    >
+    <meta name="theme-color" content="#b71234">
+    <title>Calidad de la Educación | UCM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Hubot+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#inicio" aria-label="Facultad de Educación UCM, 30 aniversario - inicio">
+          <img
+            class="brand-logo"
+            src="assets/facultad-educacion-ucm-30-aniversario.png"
+            alt="Logotipo de la Facultad de Educación de la UCM, 30 aniversario"
+          >
+          <span class="brand-copy">
+            <span class="brand-university">Universidad Complutense de Madrid</span>
+            <span class="brand-faculty">Facultad de Educación</span>
+          </span>
+        </a>
+      </div>
+    </header>
+    <nav class="nav-shell" aria-label="Navegación principal">
+      <div class="main-nav">
+        <a href="#sistema">Sistema de calidad</a>
+        <a href="#recursos">Titulaciones e informes</a>
+        <a href="#mejora">Evaluación y mejora</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+
+    <main id="contenido">
+      <section class="hero" id="inicio" aria-labelledby="page-title">
+        <div class="hero-inner">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Facultad de Educación · UCM</p>
+          <h1 id="page-title">Calidad de la Educación</h1>
+          <p class="hero-lede">
+            Información, resultados y recursos para conocer cómo cuidamos y mejoramos la calidad de nuestras titulaciones.
+          </p>
+          <a class="button button-light" href="#recursos">
+            Explorar recursos <span aria-hidden="true">↓</span>
+          </a>
+          <div class="hero-note">
+            <span class="hero-note-icon" aria-hidden="true">i</span>
+            <p>Un espacio para consultar el sistema de calidad y participar en la mejora continua de la Facultad.</p>
+          </div>
+        </div>
+        <div class="hero-decoration" aria-hidden="true">
+          <span class="decoration-ring ring-one"></span>
+          <span class="decoration-ring ring-two"></span>
+          <span class="decoration-dot"></span>
+        </div>
+      </section>
+
+      <section class="quick-section" aria-label="Accesos rápidos">
+        <a class="quick-card" href="#mejora">
+          <span class="quick-icon quick-icon-chart" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h17M8 15l4-4 3 2 5-6"/></svg>
+          </span>
+          <span class="quick-copy"><strong>Encuestas y resultados</strong><span>Consulta satisfacción y evaluación</span></span>
+          <span class="quick-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="quick-card" href="#recursos">
+          <span class="quick-icon quick-icon-doc" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 3.75h7l4 4v12.5H7a2 2 0 0 1-2-2v-12.5a2 2 0 0 1 2-2Zm7 0v4h4M8.5 12h7m-7 3.5h7"/></svg>
+          </span>
+          <span class="quick-copy"><strong>Informes y titulaciones</strong><span>Memorias, informes y seguimiento</span></span>
+          <span class="quick-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="quick-card" href="#contacto">
+          <span class="quick-icon quick-icon-message" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H7l-3.5 2v-5.3A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8.5 11.5h.01m4 0h.01m4 0h.01"/></svg>
+          </span>
+          <span class="quick-copy"><strong>Participa y consulta</strong><span>Envía una sugerencia o pregunta</span></span>
+          <span class="quick-arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <section class="directory-section" id="recursos" aria-labelledby="directory-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">Encuentra lo que necesitas</p>
+            <h2 id="directory-title">Recursos de calidad</h2>
+            <p class="section-intro">Explora por tema o busca directamente un documento, informe o servicio.</p>
+          </div>
+          <p class="resource-count" id="results-count" aria-live="polite" aria-atomic="true"></p>
+        </div>
+
+        <div class="search-panel">
+          <label class="search-box" for="resource-search">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+            <span class="visually-hidden">Buscar en los recursos</span>
+            <input id="resource-search" type="search" placeholder="Ej.: encuesta, memoria de máster, comisión…" autocomplete="off">
+          </label>
+          <div class="filter-row" role="group" aria-label="Filtrar recursos por tema">
+            <button class="filter-chip is-active" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+            <button class="filter-chip" type="button" data-filter="sistema" aria-pressed="false">Sistema de calidad</button>
+            <button class="filter-chip" type="button" data-filter="titulaciones" aria-pressed="false">Titulaciones</button>
+            <button class="filter-chip" type="button" data-filter="evaluacion" aria-pressed="false">Evaluación</button>
+            <button class="filter-chip" type="button" data-filter="mejora" aria-pressed="false">Mejora</button>
+            <button class="filter-chip" type="button" data-filter="recursos" aria-pressed="false">Otros recursos</button>
+          </div>
+        </div>
+
+        <div class="resource-grid" id="resource-grid">
+          <article class="resource-card" data-category="sistema" id="sistema">
+            <div class="card-topline"><span class="card-icon" aria-hidden="true">01</span><span class="category-label">Sistema de calidad</span></div>
+            <h3>Sistema y órganos de calidad</h3>
+            <p>Conoce el sistema interno y los equipos que coordinan la calidad en la Facultad.</p>
+            <ul class="resource-links">
+              <li><a href="https://educacion.ucm.es/file/sgic-facultad-educaci&Oacute;n-final?ver" target="_blank" rel="noopener">Sistema Interno de Garantía de Calidad (SGIC) de la Facultad <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/file/reglamento-de-funcionamiento-del-sgic?ver" target="_blank" rel="noopener">Reglamento de funcionamiento del SGIC <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/file/miembros-comision-de-calidad-2025-26-25jun26?ver" target="_blank" rel="noopener">Composición de la Comisión de Calidad <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/file/miembros-comision-coordinacion-de-grado-2025-26-7may26?ver" target="_blank" rel="noopener">Comisión de Coordinación de Grado <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/file/miembros-comision-coordinacion-de-posgrado-2025-26-7may26?ver" target="_blank" rel="noopener">Comisión de Coordinación de Posgrado <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/file/miembros-comision-coordinacion-intercentros-2025-26-7abr26?ver" target="_blank" rel="noopener">Comisión de Coordinación Intercentros <span aria-hidden="true">↗</span></a></li>
+            </ul>
+          </article>
+
+          <article class="resource-card" data-category="titulaciones">
+            <div class="card-topline"><span class="card-icon" aria-hidden="true">02</span><span class="category-label">Titulaciones</span></div>
+            <h3>Memorias e informes</h3>
+            <p>Accede a la documentación de seguimiento y verificación de las titulaciones.</p>
+            <ul class="resource-links">
+              <li><a href="https://educacion.ucm.es/informes-de-grado">Informes anuales de Grado <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/informes-de-master">Informes anuales de Máster <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.ucm.es/doctorado-en-educacion">Informes anuales de Doctorado <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/memorias-verificadas-de-grado">Memorias verificadas de Grado <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/memorias-verificadas-de-master">Memorias verificadas de Máster <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/file/memoria-modificada_pd_en-educacion-27_03_2020">Memoria verificada de Doctorado <span aria-hidden="true">↗</span></a></li>
+            </ul>
+          </article>
+
+          <article class="resource-card" data-category="evaluacion" id="mejora">
+            <div class="card-topline"><span class="card-icon" aria-hidden="true">03</span><span class="category-label">Evaluación</span></div>
+            <h3>Escuchar y evaluar</h3>
+            <p>Resultados y procesos para conocer la experiencia de la comunidad universitaria.</p>
+            <ul class="resource-links">
+              <li><a href="https://educacion.ucm.es/satisfaccion">Encuestas de satisfacción <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/evaluacion-docente">Evaluación docente <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/insercion">Inserción laboral <span aria-hidden="true">↗</span></a></li>
+            </ul>
+          </article>
+
+          <article class="resource-card" data-category="mejora">
+            <div class="card-topline"><span class="card-icon" aria-hidden="true">04</span><span class="category-label">Mejora continua</span></div>
+            <h3>Acciones e innovación</h3>
+            <p>Conoce las mejoras implantadas y los proyectos que impulsan nuevas prácticas.</p>
+            <ul class="resource-links">
+              <li><a href="https://educacion.ucm.es/mejoras">Mejoras implantadas a partir del SGIC <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/innovacion">Proyectos de innovación <span aria-hidden="true">↗</span></a></li>
+            </ul>
+          </article>
+
+          <article class="resource-card" data-category="recursos" id="contacto">
+            <div class="card-topline"><span class="card-icon" aria-hidden="true">05</span><span class="category-label">Participación</span></div>
+            <h3>Quejas, sugerencias y consultas</h3>
+            <p>Tu opinión contribuye a la mejora. Elige cómo contactar con la Facultad.</p>
+            <ul class="resource-links">
+              <li><a href="https://servcore.ccedu.ucm.es/FDE_GRSF/usr_login.aspx" target="_blank" rel="noopener">Gestión de quejas, reclamaciones, sugerencias y felicitaciones <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/file/guia-pqsrf-comunicaciones?ver" target="_blank" rel="noopener">Guía para realizar comunicaciones <span aria-hidden="true">↗</span></a></li>
+              <li><a href="mailto:fjfernandezcruz@ucm.es">Contactar por correo electrónico <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://gemini.google.com/gem/1vhnJOXIekG47dCow-eB6Au-5PZHnmqaD?usp=sharing" target="_blank" rel="noopener">Información y dudas: EDucmbot <span aria-hidden="true">↗</span></a></li>
+            </ul>
+          </article>
+
+          <article class="resource-card" data-category="recursos">
+            <div class="card-topline"><span class="card-icon" aria-hidden="true">06</span><span class="category-label">Otros recursos</span></div>
+            <h3>Calidad universitaria</h3>
+            <p>Consulta organismos, registros y recursos complementarios de la UCM.</p>
+            <ul class="resource-links">
+              <li><a href="https://educacion.ucm.es/ruct" target="_blank" rel="noopener">Registro de Universidades, Centros y Títulos (RUCT) <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://educacion.ucm.es/personal-docente" target="_blank" rel="noopener">Curriculum del PDI de la Facultad <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.ucm.es/vicerrectorado-de-evaluacion-de-la-calidad" target="_blank" rel="noopener">Vicerrectorado de Evaluación de la Calidad <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.ucm.es/opc/" target="_blank" rel="noopener">Oficina para la Calidad <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.madrimasd.org/fundacion" target="_blank" rel="noopener">Fundación para el Conocimiento madri+d <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.aneca.es/" target="_blank" rel="noopener">Agencia Nacional de Evaluación (ANECA) <span aria-hidden="true">↗</span></a></li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="empty-state" id="empty-state" hidden>No encontramos recursos con esa búsqueda. Prueba con otra palabra o categoría.</p>
+      </section>
+
+      <section class="closing-banner" aria-labelledby="closing-title">
+        <div>
+          <p class="eyebrow">Calidad es mejora compartida</p>
+          <h2 id="closing-title">¿Tienes una consulta o propuesta?</h2>
+          <p>La participación de toda la comunidad ayuda a construir una Facultad mejor.</p>
+        </div>
+        <a class="button button-light" href="https://servcore.ccedu.ucm.es/FDE_GRSF/usr_login.aspx" target="_blank" rel="noopener">Comparte tu propuesta <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="footer-brand" href="https://educacion.ucm.es/" target="_blank" rel="noopener">Facultad de Educación <span>Universidad Complutense de Madrid</span></a>
+        <p>Calidad de la Educación · Información y recursos institucionales</p>
+      </div>
+    </footer>
+  </body>
+</html>
